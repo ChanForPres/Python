@@ -12,7 +12,6 @@ def multimatch(site_ex):
 
 
 
-# regex "www.*.com"
 def site_regex(site_ex):
     pattern = 'www'
     text = site_ex.site
