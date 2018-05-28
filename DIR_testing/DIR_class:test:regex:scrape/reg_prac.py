@@ -25,7 +25,7 @@ for match in re.finditer(pattern,text):
 
 # regex "www.*.com"
 str_ex = input('ENTER URL: ')
-site_check = re.search(r'www.*.com',str_ex)
+site_check = re.search(r'https://www.*.com',str_ex)
 #assert choice in lst_choice, str(choice) +' IS NOT AN OPTION'
 
 assert site_check is not None,"URL NOT VALID"
