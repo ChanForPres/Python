@@ -76,4 +76,17 @@ for line in p_elem :
     else:
         break
 
+# write attributes to file
+    try:
+        attr_text = open('ATTR_TEXT.txt','w') # truncate + binary mode
+    except Exception as err:
+        print("FILE OPEN ERROR: " + err)
+
+for line in p_elem:
+    if iter_elem < i:
+        attr_text.write(p_elem[iter_elem].attrs)
+        iter_elem +=1
+    else:
+        break
+
 text_file.close()
