@@ -77,10 +77,10 @@ for line in p_elem :
         break
 
 # write attributes to file
-    try:
-        attr_text = open('ATTR_TEXT.txt','w') # truncate + binary mode
-    except Exception as err:
-        print("FILE OPEN ERROR: " + err)
+try:
+    attr_text = open('ATTR_TEXT.txt','w') # truncate + binary mode
+except Exception as err:
+    print("FILE OPEN ERROR: " + err)
 
 for line in p_elem:
     if iter_elem < i:
@@ -88,5 +88,16 @@ for line in p_elem:
         iter_elem +=1
     else:
         break
+
+try:
+    readable_text = open('READABLE_TEXT.txt','w')
+except Exception as err:
+    print('Exception: ' + err)
+
+#copy prettified code to readable_text
+pretty_obj = soup_obj.prettify()
+
+for chunk in pretty_obj.iter_content(1000):
+    readable_text.write(chunk)
 
 text_file.close()
